@@ -1,0 +1,32 @@
+version: '3'
+services:
+  theo:
+    build:
+      context: .
+    entrypoint: /bin/sh
+    tty: true
+    volumes:
+      - ./shared:/shared
+    networks:
+      - malcolm
+  thomas:
+    build:
+      context: .
+    entrypoint: /bin/sh
+    tty: true
+    volumes:
+      - ./shared:/shared
+    networks:
+      - malcolm
+  sameo:
+    build:
+      context: .
+    entrypoint: /bin/sh
+    tty: true
+    volumes:
+      - ./shared:/shared
+    networks:
+      - malcolm
+networks:
+  malcolm:
+    driver: bridge
